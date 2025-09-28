@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de livraria</title>
+    <link rel="stylesheet" href="../css/index.css">
+</head>
+
+<body>
+    <!-- Modal Relatórios -->
+    <div id="modalRelatorios" class="modal">
+        <div class="modal-conteudo">
+            <span class="fechar" onclick="fecharModal()">&times;</span>
+            <h2>Relatórios Disponíveis</h2>
+            <div class="opcoes-relatorios">
+                <button onclick="gerarRelatorio(1)">GERAL</button>
+                <button onclick="gerarRelatorio(3)">AUTOR</button>
+                <button onclick="gerarRelatorio(4)">EDITORA</button>
+                <button onclick="gerarRelatorio(5)">VALOR</button>
+                <button onclick="gerarRelatorio(6)">ESTOQUE ZERADO</button>
+                <button onclick="gerarRelatorio(7)">CATEGORIA</button>
+                <div style="display: inline-flex; align-items: center; gap: 8px; margin-right: 10px;">
+                    <button onclick="gerarRelatorio(2)">STATUS</button>
+                    <select id="statusSelect">
+                        <option value="DISPONIVEL">DISPONÍVEL</option>
+                        <option value="INDISPONIVEL">INDISPONÍVEL</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navegação Lateral -->
+    <nav class="navigation">
+        <ul>
+            <li>
+                <a href="#">
+                    <span class="icon" title="Livraria">
+                        <ion-icon name="library-outline"></ion-icon>
+                    </span>
+                    <span class="title">Livraria Sola Scriptura</span>
+                </a>
+            </li>
+            <li>
+                <a href="index.html">
+                    <span class="icon" title="Planilha">
+                        <ion-icon name="grid-outline"></ion-icon>
+                    </span>
+                    <span class="title">Catálogo</span>
+                </a>
+            </li>
+            <li>
+                <a href="livro.html" data-section="livrosSection">
+                    <span class="icon" title="Livros">
+                        <ion-icon name="book-outline"></ion-icon>
+                    </span>
+                    <span class="title">Livros</span>
+                </a>
+            </li>
+            <li>
+                <a href="lista.html">
+                    <span class="icon" title="Informações">
+                        <ion-icon name="list-outline"></ion-icon>
+                    </span>
+                    <span class="title">Lista de tarefas</span>
+                </a>
+            </li>
+            <li>
+                <a href="infor.html">
+                    <span class="icon" title="Informações">
+                        <ion-icon name="information-circle-outline"></ion-icon>
+                    </span>
+                    <span class="title">Informações</span>
+                </a>
+            </li>
+            <li>
+                <a href="user.html">
+                    <span class="icon" title="Informações do Usuário">
+                        <ion-icon name="person-circle-outline"></ion-icon>
+                    </span>
+                    <span class="title">Usuários</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Main -->
+    <main>
+        <div class="topbar">
+            <div class="toggle">
+                <ion-icon name="menu-outline"></ion-icon>
+            </div>
+            <div class="search">
+                <label>
+                    <input type="text" id="inputBusca" placeholder="Título do livro" onkeyup="buscarPorTitulo()">
+                    <ion-icon name="search-outline"></ion-icon>
+                </label>
+            </div>
+            <div class="user">
+                <img src="../img/image copy.png" alt="">
+            </div>
+        </div>
+
+        <section class="details" id="livrosSection">
+            <div class="recentOrders">
+                <div class="cardHeader">
+                    <h2>Catálogo Oficial de Livros – Livraria Sola Scriptura</h2>
+                </div>
+                <div class="selecoes">
+                    <div class="botoes-infr">
+                        <button onclick="abrirModal()">RELATÓRIOS</button>
+                    </div>
+                </div>
+
+                <!-- Tabela de Livros -->
+                <div class="tabela-container">
+                    <table class="tabela-livros">
+                        <thead>
+                            <tr>
+                                <td class="titulo">TÍTULO</td>
+                                <td class="subtitulo">SUB TÍTULO</td>
+                                <td class="autor">AUTOR</td>
+                                <td class="editora">EDITORA</td>
+                                <td class="tipo-capa">CAPA</td>
+                                <td class="categoria">CATEGO.</td>
+                                <td class="isbn">ISBN</td>
+                                <td class="valor">VALOR</td>
+                                <td class="quantidade">QUANT.</td>
+                                <td class="status">STATUS</td>
+                                <td class="data">DATA</td>
+                            </tr>
+                        </thead>
+                        <tbody id="livrosTableBody">
+                            <!-- Conteúdo inserido via JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="../js/index.js"></script>
+    <script src="../js/relatorio.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

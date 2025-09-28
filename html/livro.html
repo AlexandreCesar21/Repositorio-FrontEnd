@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de livraria</title>
+    <link rel="stylesheet" href="../css/livro.css">
+</head>
+
+<div id="modalLivro" class="modal" style="display: none;">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>EDITAR LIVRO</h2>
+
+    <form id="formEditarLivro">
+      <!-- Linha de inputs Título, Subtítulo, Autor -->
+      <div class="input-row">
+        <div class="input-group">
+          <label for="editTitulo">Título:</label>
+          <input type="text" id="editTitulo">
+        </div>
+
+        <div class="input-group">
+          <label for="editSubtitulo">Subtítulo:</label>
+          <input type="text" id="editSubtitulo">
+        </div>
+
+        <div class="input-group">
+          <label for="editAutor">Autor:</label>
+          <input type="text" id="editAutor">
+        </div>
+      </div>
+
+      <!-- Linha de inputs Editora, Valor, Quantidade -->
+      <div class="input-row">
+        <div class="input-group">
+          <label for="editEditora">Editora:</label>
+          <input type="text" id="editEditora">
+        </div>
+
+        <div class="input-group">
+          <label for="editValor">Valor:</label>
+          <input type="number" id="editValor">
+        </div>
+
+        <div class="input-group">
+          <label for="editQuantidade">Quantidade:</label>
+          <input type="number" id="editQuantidade">
+        </div>
+      </div>
+
+      <!-- Linha de selects Tipo Capa, Categoria, Status -->
+      <div class="input-row">
+        <div class="input-group">
+          <label for="editTipoCapa">Tipo Capa:</label>
+          <select id="editTipoCapa">
+            <option value="" disabled selected>Selecione</option>
+            <option value="DURA">Dura</option>
+            <option value="MOLDA">Molda</option>
+          </select>
+        </div>
+
+        <div class="input-group">
+          <label for="editCategoria">Categoria:</label>
+          <select id="editCategoria">
+            <option value="" disabled selected>Selecione</option>
+            <option value="EVANGELIO">Evangelho</option>
+            <option value="TEOLOGICO">Teológico</option>
+            <option value="CIENCIAS">Ciências</option>
+          </select>
+        </div>
+
+        <div class="input-group">
+          <label for="editStatus">Status:</label>
+          <select id="editStatus">
+            <option value="" disabled selected>Selecione</option>
+            <option value="ATIVO">Ativo</option>
+            <option value="INATIVO">Inativo</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Linha de botões -->
+      <div class="modal-buttons">
+        <button type="submit" id="btnSalvar">Salvar</button>
+        <button type="button" id="btnFechar" class="cancelar">Fechar</button>
+        <button type="button" id="Remover" class="remover">Remover</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+
+<body>
+    <nav class="navigation">
+        <ul>
+            <li>
+                <a href="#">
+                    <span class="icon" title="Livraria">
+                        <ion-icon name="library-outline"></ion-icon>
+                    </span>
+                    <span class="title">Livraria Sola Scriptura</span>
+                </a>
+            </li>
+            
+            <li>
+                <a href="index.html">
+                    <span class="icon" title="Planilha">
+                        <ion-icon name="grid-outline"></ion-icon>
+                      </span>
+                    <span class="title">Catalogo</span>
+                </a>
+            </li>
+
+           
+            <li>
+                <a href="livro.html" data-section="livrosSection">
+                  <span class="icon" title="Livros">
+                    <ion-icon name="book-outline"></ion-icon>
+                  </span>
+                  <span class="title">Livros</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="lista.html">
+                    <span class="icon" title="Informações">
+                        <ion-icon name="list-outline"></ion-icon>
+                      </span>
+                    <span class="title">Lista de tarefas</span>
+                </a>
+            </li>
+            <li>
+                <a href="infor.html">
+                    <span class="icon" title="Informações">
+                        <ion-icon name="information-circle-outline"></ion-icon>
+                      </span>
+                    <span class="title">Informações</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="user.html">
+                    <span class="icon" title="Informações do Usuário">
+                        <ion-icon name="person-circle-outline"></ion-icon>
+                    </span>
+                    <span class="title">usuarios</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+
+   <main>
+    <div class="form-livro">            
+        <div class="topbar">
+            <div class="toggle">
+                <ion-icon name="menu-outline"></ion-icon>
+            </div>
+            <div class="user">
+                <img src="../img/image copy.png" alt="">
+            </div>
+        </div>        
+
+        <div class="form-livro-header">
+            <h1>Formulário de Cadastro de Livro</h1>
+        </div>
+
+        <form action="" method="post" id="formCadastro">
+            <div class="form-livro-1">
+                <label for="titulo">Título:</label>
+                <input type="text" id="titulo" name="titulo" placeholder="Título" required>  
+
+                <label for="subtitulo">Subtítulo:</label>
+                <input type="text" id="subtitulo" name="subtitulo" placeholder="Subtítulo" required> 
+
+                <label for="autor">Autor:</label>
+                 <input type="text" id="autor" name="autor" placeholder="Nome do autor" required>
+            </div>
+            
+            <div class="form-livro-2">
+                <label for="editora">Editora:</label>
+                <input type="text" id="editora" name="editora" placeholder="Nome da editora" required>
+
+                <label for="valor">Valor:</label>
+                <input type="text" id="valor" name="valor" placeholder="Valor do livro" required > 
+
+                <label for="quantidade">Quantidade:</label>
+                <input type="text" id="quantidade" name="quantidade" placeholder="Quantidade do livro" >
+            </div>
+          
+           <div class="form-livro-3">
+            <label for="isbn">ISBN:</label>
+            <input type="text" id="isbn" name="isbn" placeholder="ISBN" required>
+
+            <label for="categoria">Categoria:</label>
+            <select name="categoria" id="categoria" required>
+                <option value="" disabled selected>Selecione</option>
+                <option value="EVANGELIO">Evangelho</option>
+                <option value="TEOLOGICO">Teológico</option>
+                <option value="CIENCIAS">Ciências</option>
+                <option value="HISTORIA">História</option>
+                <option value="FILOSOFIA">Filosofia</option>
+                <option value="EDUCACAO">Educação</option>
+                <option value="TECNOLOGIA">Tecnologia</option>
+            </select>    
+
+            <label for="tipoCapa">Tipo de Capa:</label>
+            <select name="tipoCapa" id="tipoCapa" required>
+                <option value="" disabled selected>Selecione</option>
+                <option value="DURA">Dura</option>
+                <option value="MOLDA">Mole</option> 
+            </select>    
+         </div>
+
+
+            <div class="button-devs">
+                <button type="button" class="button-cadast" >Cadastrar</button>
+
+                <div class="button-isbn">
+                    <button type="button" id="button-isbn">Biblía</button>
+                </div>
+            </div>
+        </form>
+      </div>
+
+
+        <section class="details">
+            <div class="recentOrders">
+                <div class="cardHeader">
+                    <h2>Descubra os Títulos Disponíveis em Nossa Livraria
+                </h2>
+                </div>
+                
+                <div class="selecoes">
+                    <div class="search">
+                        <label>
+                            <input type="text"  id="buscarLivro" placeholder="Procurar livro">
+                            <ion-icon name="search-outline"></ion-icon>
+                        </label>
+                    </div>
+                    <div class="botoes-infr">
+                        <label style="display: none;">
+                            <input type="button" value="Atualizar" class="Atualizar">
+                        </label>
+                        <label for="" style="display: none;">
+                            <input type="button" value="Remover" class="Deletar">
+                        </label>
+                    </div>
+                </div>
+
+                <table id="livrosTable">
+                    <thead>
+                        <tr>
+                            <td class="titulo">TITULO</td>
+                            <td class="subtitulo">SUB TITULO</td>
+                            <td class="autor">AUTOR</td>
+                            <td class="editora">EDITORA</td>
+                            <td class="tipo-capa">TIPO CAPA</td>
+                            <td class="categoria">CATEGO.</td>
+                            <td class="isbn">ISBN</td>
+                            <td class="valor">VALOR</td>
+                            <td class="quantidade">QUANTI.</td>
+                            <td class="status">STATUS</td>
+                            <td class="data">DATA</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                       
+                    </tbody>
+                </table>
+                
+        </section>
+
+    </main>
+
+    <div id="toast" class="toast hidden">Mensagem aqui</div>
+
+
+    <script src="../js/index.js"></script>
+    <script src="../js/livro.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+
+  <div id="confirmModal" class="modal" style="display: none;">
+    <div class="modal-content">
+      <p>Tem certeza que deseja remover este livro?</p>
+      <div style="display: flex; gap: 10px; justify-content: flex-end; margin-top: 20px;">
+        <button id="btnConfirmarSim">Sim</button>
+        <button id="btnConfirmarNao">Cancelar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal de erro -->
+<div id="modalErroCampos" class="modal-erro">
+    <div class="modal-conteudo">
+      <span class="close-erro">&times;</span>
+      <p>Por favor, preencha os campos obrigatórios.</p>
+    </div>
+  </div>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Sistema de livraria</title>
+    <link rel="stylesheet" href="../css/lista.css" />
+</head>
+<body>
+    <nav class="navigation">
+        <ul>
+            <li>
+                <a href="#">
+                    <span class="icon" title="Livraria">
+                        <ion-icon name="library-outline"></ion-icon>
+                    </span>
+                    <span class="title">Livraria Sola Scriptura</span>
+                </a>
+            </li>
+            <li>
+                <a href="index.html">
+                    <span class="icon">
+                        <ion-icon name="grid-outline"></ion-icon>
+                    </span>
+                    <span class="title">Catálogo</span>
+                </a>
+            </li>
+        
+            <li>
+                <a href="livro.html">
+                    <span class="icon">
+                        <ion-icon name="book-outline"></ion-icon>
+                    </span>
+                    <span class="title">Livros</span>
+                </a>
+            </li>
+           
+            <li>
+                <a href="lista.html">
+                    <span class="icon">
+                        <ion-icon name="list-outline"></ion-icon>
+                    </span>
+                    <span class="title">Lista de tarefas</span>
+                </a>
+            </li>
+            <li>
+                <a href="infor.html">
+                    <span class="icon">
+                        <ion-icon name="information-circle-outline"></ion-icon>
+                    </span>
+                    <span class="title">Informações</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="icon">
+                        <ion-icon name="person-circle-outline"></ion-icon>
+                    </span>
+                    <span class="title">Usuários</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <main>
+        <div class="form-livro">            
+            <div class="topbar">
+                <div class="toggle"><ion-icon name="menu-outline"></ion-icon></div>
+                <div class="user"><img src="../img/image copy.png" alt="" /></div>
+            </div>        
+            <div class="form-livro-header">
+                <h1>Gerenciador de Tarefas</h1>
+            </div>
+            <form onsubmit="return false;">
+                <div class="form-livro-1">
+                    <label for="tarefa">Tarefa:</label>
+                    <input id="tarefa" type="text" placeholder="Tarefa" required />
+
+                    <label for="funcionario(a)">Funcionário(a):</label>
+                    <select id="funcionario" required>
+                        <option value="">Selecione o funcionário</option>
+                        <option value="joao">João</option>
+                        <option value="marcos">Marcos</optio>
+                        <option value="marcelo">Marcelo</option>
+                    </select>
+                </div> 
+                <div class="button-devs">
+                    <input type="button" value="Criar tarefa" class="button-cadast" />
+                </div>
+            </form>
+        </div>
+
+        <section class="details">
+            <div class="recentOrders">
+                <div class="selecoes">
+                    <div class="search">
+                        <label>
+                            <input type="text" id="buscarLivro" placeholder="Buscar tarefa" />
+                            <ion-icon name="search-outline"></ion-icon>
+                        </label>
+                    </div>
+                </div>
+                
+                <div id="lista-tarefas" class="tarefa-secti"></div>
+            </div>
+        </section>
+    </main>
+    
+    <script src="../js/index.js"></script>
+    <script src="../js/lista.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

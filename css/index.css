@@ -1,0 +1,526 @@
+/* =========== Google Fonts ============ */
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap");
+
+/* =============== Globals ============== */
+* {
+  font-family: "Ubuntu", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+    --blue: #3a0000;
+    --white: #fff;
+    --gray: #f5f5f5;
+    --black1: #222;
+    --black2: #999;
+}
+
+
+  /* ------- Navigation -------- */
+
+.navigation {
+    position: fixed;
+    width: 300px;
+    height: 100%;
+    background: var(--blue);
+    border-left: 10px solid var(--blue);
+    transition: 0.5s;
+    overflow: hidden;
+  }
+  .navigation.active {
+    width: 80px;
+  }
+  
+  .navigation ul {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+  
+  .navigation ul li {
+    position: relative;
+    width: 100%;
+    list-style: none;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+  }
+  
+  .navigation ul li:hover,
+  .navigation ul li.hovered {
+    background-color: var(--white);
+  }
+  
+  .navigation ul li:nth-child(1) {
+    margin-bottom: 40px;
+    pointer-events: none;
+  }
+  
+  .navigation ul li a {
+    position: relative;
+    display: block;
+    width: 100%;
+    display: flex;
+    text-decoration: none;
+    color: var(--white);
+  }
+  .navigation ul li:hover a,
+  .navigation ul li.hovered a {
+    color: var(--blue);
+  }
+  
+  .navigation ul li a .icon {
+    position: relative;
+    display: block;
+    min-width: 60px;
+    height: 60px;
+    line-height: 75px;
+    text-align: center;
+  }
+  .navigation ul li a .icon ion-icon {
+    font-size: 1.75rem;
+  }
+  
+  .navigation ul li a .title {
+    position: relative;
+    display: block;
+    padding: 0 10px;
+    height: 60px;
+    line-height: 60px;
+    text-align: start;
+    white-space: nowrap;
+  }
+
+  /* ------- Navigation -------- */
+
+
+  /* ------- Main -------- */
+
+
+    main {
+      position: absolute;
+      width: calc(100% - 300px);
+      left: 300px;
+      min-height: 100vh;
+      background: var(--white);
+      transition: 0.5s;
+      overflow: hidden;
+    }
+
+
+    main.active {
+      width: calc(100% - 80px);
+      left: 80px;
+    }
+    
+    .topbar {
+      width: 100%;
+      height: 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 10px;
+    }
+    
+    .toggle {
+      position: relative;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 2.5rem;
+      cursor: pointer;
+    }
+    
+    .search {
+      position: relative;
+      width: 400px;
+      margin: 0 10px;
+      top: 20px;
+    }
+    
+    .search label {
+      position: relative;
+      width: 100%;
+    }
+    
+    .search label input {
+      width: 100%;
+      height: 50px;
+      border-radius: 40px;
+      padding: 5px 20px;
+      padding-left: 35px;
+      font-size: 20px;
+      outline: none;
+      border: 2px solid var(--blue);
+    }
+    
+    .search label ion-icon {
+      position: absolute;
+      top: 0;
+      left: 10px;
+      font-size: 1.4rem;
+    }
+    
+    .user {
+      position: relative;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      overflow: hidden;
+      cursor: pointer;
+      right: 40px;
+      top: 15px;
+    }
+    
+    .user img {
+      position: absolute;
+      top: 0;
+      left: 0px;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+/* --------- curve outside ---------- */
+.navigation ul li:hover a::before,
+.navigation ul li.hovered a::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: -50px;
+  width: 50px;
+  height: 50px;
+  background-color: transparent;
+  border-radius: 50%;
+  box-shadow: 35px 35px 0 10px var(--white);
+  pointer-events: none;
+}
+.navigation ul li:hover a::after,
+.navigation ul li.hovered a::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: -50px;
+  width: 50px;
+  height: 50px;
+  background-color: transparent;
+  border-radius: 50%;
+  box-shadow: 35px -35px 0 10px var(--white);
+  pointer-events: none;
+}
+/* --------- curve outside ---------- */
+
+/* ================== Order Details List ============== */
+.details {
+  position: relative;
+  left: 7px;
+  width: 147%;
+  height: 10%;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-gap: 30px;
+  margin-top: 10px; 
+}
+
+.details .recentOrders {
+  position: relative;
+  display: grid;
+  min-height: 100px;
+  background: var(--white);
+  padding: 20px;
+  box-shadow: 0 7px 25px rgba(0, 0, 0, 0.63); /*sombra 63*/
+  border-radius: 20px;
+  padding-bottom: 60px;
+}
+
+.details .cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 4px;
+}
+.cardHeader h2 {
+  font-weight: 900;
+  color: var(--blue);
+}
+
+.selecoes {
+  padding: 5px;
+  display: grid;
+  grid-auto-flow: column;
+  columns: auto;
+}
+
+.selecoes .botoes-infr {
+  position: relative;
+  text-align: end;
+  top: 3px;
+}
+.selecoes .botoes-infr button {
+  width: 8%;
+  height: 2rem;
+  margin-bottom: 20px;
+  background: var(--blue);
+  color: var(--white);
+  border: none;
+  font-weight: 900;
+  border-radius: 7px;
+}
+.selecoes .botoes-infr button:hover {
+  background-color: #410808d6;
+}
+
+.cardHeader .btn {
+  position: relative;
+  padding: 5px 10px;
+  background: var(--blue);
+  text-decoration: none;
+  color: var(--white);
+  border-radius: 6px;
+}
+
+.details table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: -4px;
+  border: solid 3px var(--blue); 
+  font-weight: 500;
+ }
+
+.details table thead td {
+  font-weight:600;
+  border: solid 3px var(--blue);
+  text-align: center
+}
+
+
+
+.details .recentOrders table tr {
+  color: var(--blue);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.details .recentOrders table tr:last-child {
+  border-bottom: none;
+  
+}
+
+.details .recentOrders table tr td {
+  padding: 10px;
+  border: solid 3px black; /*borda*/
+  text-align: center;
+}
+.details .recentOrders table tr td:last-child {
+  text-align: center;
+}
+.details .recentOrders table tr td:nth-child(2) {
+  text-align: center;
+}
+.details .recentOrders table tr td:nth-child(3) {
+  text-align: center;
+}
+
+.recentCustomers {
+  position: relative;
+  display: grid;
+  min-height: 500px;
+  padding: 20px;
+  background: var(--white);
+  box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+  border-radius: 20px;
+}
+.recentCustomers .imgBx {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border-radius: 50px;
+  overflow: hidden;
+}
+.recentCustomers .imgBx img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.recentCustomers table tr td {
+  padding: 12px 10px;
+}
+.recentCustomers table tr td h4 {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.2rem;
+}
+.recentCustomers table tr td h4 span {
+  font-size: 14px;
+  color: var(--black2);
+}
+.recentCustomers table tr:hover {
+  background: var(--blue);
+  color: var(--white);
+}
+.recentCustomers table tr:hover td h4 span {
+  color: var(--white);
+}
+
+.details .recentOrders table tbody tr:hover {
+  background: var(--blue);
+  color: var(--white);
+}
+
+
+#livrosTable {
+  text-align: center;
+  vertical-align: middle;
+}
+
+ .status-ativo {
+   color: white;
+    font-weight: 900;
+    background-color: #8de02c;
+  }
+
+
+  .data-horario {
+    color: white;
+    background-color: rgb(108, 201, 255);
+    font-weight: 900;
+  }
+  
+/* ================== Order Details List ============== */
+  
+
+/*     RELATORIO      */
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.5);
+}
+
+.modal-conteudo {
+  background-color: #fff;
+  margin: 10% auto;
+  padding: 30px;
+  border-radius: 12px;
+  width: 400px;
+  text-align: center;
+}
+.modal-conteudo h2 {
+  color: var(--blue);
+  font-weight: bolder;
+}
+
+.fechar {
+  float: right;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.opcoes-relatorios {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* espaçamento igual entre itens */
+}
+
+.opcoes-relatorios button {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: none;
+  background-color: var(--blue);
+  color: var(--white);
+  font-weight: 900;
+  transition: background-color 0.3s;
+  cursor: pointer;
+}
+
+.opcoes-relatorios button:hover {
+  background-color: #410808d6;
+}
+
+/* novo grupo status */
+.relatorio-status {
+  display: flex;
+  width: 100%;       /* mesmo tamanho dos botões */
+  gap: 8px;
+}
+
+.relatorio-status select {
+  flex: 4;            /* 2 partes */
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid var(--blue);
+  font-weight: 900;
+  color: var(--blue);
+  cursor: pointer;
+  background-color: #fff;
+  appearance: none;  /* remove estilo padrão no select */
+}
+
+.relatorio-status button {
+  flex: 1;            /* 1 parte */
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: none;
+  background-color: var(--blue);
+  color: var(--white);
+  font-weight: 900;
+  transition: background-color 0.3s;
+  cursor: pointer;
+}
+
+.opcoes-relatorios > div {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between; /* espalha botão e select */
+  width: 395px;  /* largura total do container do botão+select */
+  margin-right: 10px;
+  /* gap: 8px; // não precisa se usar space-between */
+}
+
+.opcoes-relatorios > div button {
+  width: 310px;  /* botão maior */
+  height: 2.5rem;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+.opcoes-relatorios > div select {
+  width: 115px;   /* select menor */
+  height: 2.5rem;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+.table-container {
+  width: 100%;
+  overflow-x: auto; /* permite rolagem horizontal quando necessário */
+  -webkit-overflow-scrolling: touch; /* melhora rolagem em iOS */
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed; /* opcional para controlar colunas */
+  min-width: 800px; /* ou ajuste de acordo com seu conteúdo mínimo */
+}
+
+table td, table th {
+  padding: 8px;
+  text-align: left;
+  word-wrap: break-word; /* quebra palavras longas */
+}

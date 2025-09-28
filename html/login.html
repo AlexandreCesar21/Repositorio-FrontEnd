@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<!-- Declaração do tipo do documento HTML -->
+<html lang="pt-BR">
+<!-- Define a linguagem da página como Português do Brasil -->
+
+<head>
+    <meta charset="UTF-8" />
+    <!-- Define a codificação de caracteres como UTF-8 para suportar acentuação e caracteres especiais -->
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <!-- Configura o layout para ser responsivo em dispositivos móveis -->
+
+    <title>Login</title>
+    <!-- Título da aba do navegador -->
+
+    <link rel="stylesheet" href="../css/login.css"/>
+    <!-- Importa o arquivo de estilo CSS externo -->
+</head>
+
+<body>
+    <header>
+        <!-- Cabeçalho da página -->
+        <h1 class="logo"></h1>
+        <!-- Espaço reservado para o logotipo -->
+    </header>
+
+    <main class="login-container">
+        <!-- Container principal para o formulário de login -->
+
+        <form id="login-form">
+            <!-- Formulário de login com ID usado no JavaScript para capturar o submit -->
+            
+            <h2>Livraria Sola Scriptura</h2>
+            <!-- Título dentro do formulário -->
+
+            <label for="nome">Nome</label>
+            <!-- Rótulo para o campo de nome -->
+            <input type="nome" id="nome" required />
+            <!-- Campo de entrada para o nome do usuário -->
+
+            <label for="password">Senha</label>
+            <!-- Rótulo para o campo de senha -->
+            <input type="password" id="password" required minlength="6" />
+            <!-- Campo de senha com validação mínima de 6 caracteres -->
+
+            <div class="remember-me">
+                <!-- Seção para a opção de lembrar o login -->
+                <input type="checkbox" id="remember" />
+                <label for="remember">Lembrar-me</label>
+            </div>
+
+            <button type="submit">Entrar</button>
+            <!-- Botão para enviar o formulário -->
+
+            <p id="error-message" class="error-message"></p>
+            <!-- Parágrafo para exibir mensagens de erro, preenchido via JavaScript -->
+        </form>
+    </main>
+
+    <script src="../js/login.js"></script>
+    <!-- Importa o arquivo JavaScript responsável por lidar com o envio do formulário e autenticação -->
+</body>
+</html>

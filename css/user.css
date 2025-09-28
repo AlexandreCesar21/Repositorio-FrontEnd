@@ -1,0 +1,801 @@
+/* =========== Google Fonts ============ */
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap");
+
+/* =============== Globals ============== */
+* {
+  font-family: "Ubuntu", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+    --blue: #3a0000;
+    --white: #fff;
+    --gray: #f5f5f5;
+    --black1: #222;
+    --black2: #999;
+}
+
+
+  /* ------- Navigation -------- */
+
+.navigation {
+    position: fixed;
+    width: 300px;
+    height: 100%;
+    background: var(--blue);
+    border-left: 10px solid var(--blue);
+    transition: 0.5s;
+    overflow: hidden;
+  }
+  .navigation.active {
+    width: 80px;
+  }
+  
+  .navigation ul {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+  
+  .navigation ul li {
+    position: relative;
+    width: 100%;
+    list-style: none;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+  }
+  
+  .navigation ul li:hover,
+  .navigation ul li.hovered {
+    background-color: var(--white);
+  }
+  
+  .navigation ul li:nth-child(1) {
+    margin-bottom: 40px;
+    pointer-events: none;
+  }
+  
+  .navigation ul li a {
+    position: relative;
+    display: block;
+    width: 100%;
+    display: flex;
+    text-decoration: none;
+    color: var(--white);
+  }
+  .navigation ul li:hover a,
+  .navigation ul li.hovered a {
+    color: var(--blue);
+  }
+  
+  .navigation ul li a .icon {
+    position: relative;
+    display: block;
+    min-width: 60px;
+    height: 60px;
+    line-height: 75px;
+    text-align: center;
+  }
+  .navigation ul li a .icon ion-icon {
+    font-size: 1.75rem;
+  }
+  
+  .navigation ul li a .title {
+    position: relative;
+    display: block;
+    padding: 0 10px;
+    height: 60px;
+    line-height: 60px;
+    text-align: start;
+    white-space: nowrap;
+  }
+
+  /* ------- Navigation -------- */
+
+
+  /* --------- curve outside ---------- */
+.navigation ul li:hover a::before,
+.navigation ul li.hovered a::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: -50px;
+  width: 50px;
+  height: 50px;
+  background-color: transparent;
+  border-radius: 50%;
+  box-shadow: 35px 35px 0 10px var(--white);
+  pointer-events: none;
+}
+.navigation ul li:hover a::after,
+.navigation ul li.hovered a::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: -50px;
+  width: 50px;
+  height: 50px;
+  background-color: transparent;
+  border-radius: 50%;
+  box-shadow: 35px -35px 0 10px var(--white);
+  pointer-events: none;
+}
+/* --------- curve outside ---------- */
+
+
+
+
+/* ------- Main -------- */
+main {
+    position: absolute;
+    width: calc(100% - 300px);
+    left: 300px;
+    min-height: 100vh;
+    background: var(--white);
+    transition: 0.5s;
+    overflow: hidden;
+  }
+
+
+  main.active {
+    width: calc(100% - 80px);
+    left: 80px;
+  }
+  
+  .topbar {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+  }
+  
+  .toggle {
+    position: relative;
+    width: 60px;
+    top: 2px;
+    left: 20px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+    cursor: pointer;
+  }
+  
+  
+  .user {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+    right: 40px;
+    top: 5px;
+  }
+  
+  .user img {
+    position: absolute;
+    top: 0;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+
+
+
+main .form-livro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 24px;
+    background: var(--white);
+    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.63); /*sombra 63*/
+    border-radius: 20px;
+    padding: 25px;
+    min-height: 250px;
+    width: 93%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 60px;
+    
+  }
+  
+  form {
+    position: relative;
+    bottom: -8px;
+    border: solid 3px var(--blue);
+    border-top: none;
+    border-left: solid 3px var(--blue);
+    box-shadow: 30px 34px 25px rgba(0, 0, 0, 0.23); /*sombra 63*/
+    padding-bottom: 30px;
+        width: 66%;
+  }
+  
+  
+  
+  label {
+      font-size: 21px;
+      color: var(--blue);
+      margin-bottom: 10px;
+      font-weight: 500;
+      text-align: left;
+      margin: 1px;
+  }
+  
+  input {
+      width: 26.5%;
+      height: 16px;
+      border-radius: 40px;
+      padding: 5px 20px;
+      font-size: 17px;
+      outline: none;
+      border: 1px solid var(--blue);
+      margin-bottom: 20px;
+      margin: 8px;
+  }
+  
+  .form-livro-1 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 50px;
+      padding: 3px;
+      margin-left: auto;
+      margin-right: auto;
+  }
+  .form-livro-2 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 20px;
+      padding: 3px;
+      margin-left: auto;
+      margin-right: auto;
+      position: relative;
+      right: 10px;
+  }
+  
+  .form-livro {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-top: 22px;
+      background: var(--white);
+      box-shadow: 0 7px 25px rgba(0, 0, 0, 0.17);
+      border-radius: 20px;
+      padding: 25px;
+      min-height: 250px;
+      width: 91%;
+      margin-left: auto;
+      margin-right: auto;
+  }
+  
+  .form-livro h1 {
+      font-size: 50px;
+      color: var(--blue);
+      margin-bottom: 10px;
+      font-weight: bolder;
+      text-align: center;
+      margin: 1px;
+  
+  }
+
+  select {
+    width: 47.9%;
+    height: 29px;
+    border-radius: 40px;
+    padding: 5px 20px;
+    font-size: 17px;
+    outline: none;
+    border: 1px solid var(--blue);
+    margin-bottom: 20px;
+    margin: 8px;
+    top: 23px;
+}
+
+
+
+
+
+  .button-devs {
+    text-align: center;
+    height: 50px;
+    width: 80%;
+    padding-top: 70px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    bottom: 20px;
+  }
+  
+  .button-cadast { 
+    width: 35%;
+    height: 90%;
+    background-color: var(--blue);
+    color: #f5f5f5;
+    font-weight: 900;
+    font-size: 1.4em;
+  
+  }
+  
+  .button-cadast:hover {
+    background-color: #410808d6;
+  }
+
+
+    /* ---------- Lista de USUARIOS ----------  */
+
+
+  .details {
+    position: relative;
+    left: 7px;
+    width: 147%;
+    height: 10%;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-gap: 30px;
+    margin-top: 10px; 
+  }
+  
+  .details .recentOrders {
+    position: relative;
+    display: grid;
+    min-height: 100px;
+    background: var(--white);
+    padding: 20px;
+    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.63); /*sombra 63*/
+    border-radius: 20px;
+    padding-bottom: 60px;
+  }
+  
+  .details .cardHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 4px;
+  }
+  .cardHeader h2 {
+    font-weight: 900;
+    color: var(--blue);
+  }
+  
+  .selecoes {
+    padding: 5px;
+    display: grid;
+    grid-auto-flow: column;
+    columns: auto;
+  
+    
+  }
+  
+  
+  .search {
+    position: relative;
+    width: 240px;
+    margin: 0 10px;
+    top: 20px;
+  }
+  
+  .search label {
+    position: relative;
+    bottom: 20px;
+    width: 100%;
+  }
+  
+  .search label input {
+    width: 110%;
+    height: 25px;
+    border-radius: 40px;
+    padding: 5px 20px;
+    padding-left: 35px;
+    font-size: 15px;
+    outline: none;
+    border: 2.5px solid var(--blue);
+    margin-top: 10px;
+    margin-bottom: -10px;
+    position: relative;
+    right: 20px;  
+  }
+  
+  .search label ion-icon {
+    position: absolute;
+    top: 5px;
+    left: 0px;
+    font-size: 1.2rem;
+  }
+  
+  
+  .selecoes .botoes-infr {
+    position: relative;
+    text-align: end;
+    top: 3px;
+  }
+  .selecoes .botoes-infr input {
+    width: 20%;
+    height: 60%;
+  }
+  
+  .cardHeader .btn {
+    position: relative;
+    padding: 5px 10px;
+    background: var(--blue);
+    text-decoration: none;
+    color: var(--white);
+    border-radius: 6px;
+  }
+  
+  .details table {
+    width: 70%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: collapse;
+    margin-top: -4px;
+    border: solid 3px var(--blue); 
+   }
+  
+  .details table thead td {
+    font-weight: 600;
+    border: solid 3px var(--blue);
+    text-align: center
+  }
+  
+  
+  .details .recentOrders table tr {
+    color: var(--blue);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  .details .recentOrders table tr:last-child {
+    border-bottom: none;
+    
+  }
+  
+  .details .recentOrders table tr td {
+    padding: 10px;
+    border: solid 3px black; /*borda*/
+  
+  }
+  .details .recentOrders table tr td:last-child {
+    text-align: center;
+  }
+  .details .recentOrders table tr td:nth-child(2) {
+    text-align: center;
+  }
+  .details .recentOrders table tr td:nth-child(3) {
+    text-align: center;
+  }
+  
+  .recentCustomers {
+    position: relative;
+    display: grid;
+    min-height: 500px;
+    padding: 20px;
+    background: var(--white);
+    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+    border-radius: 20px;
+  }
+  .recentCustomers .imgBx {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+    overflow: hidden;
+  }
+  .recentCustomers .imgBx img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .recentCustomers table tr td {
+    padding: 12px 10px;
+  }
+  .recentCustomers table tr td h4 {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.2rem;
+  }
+  .recentCustomers table tr td h4 span {
+    font-size: 14px;
+    color: var(--black2);
+  }
+  .recentCustomers table tr:hover {
+    background: var(--blue);
+    color: var(--white);
+  }
+  .recentCustomers table tr:hover td h4 span {
+    color: var(--white);
+  }
+  
+  .details .recentOrders table tbody tr:hover {
+    background: var(--blue);
+    color: var(--white);
+  }
+  
+  #livrosTable {
+    text-align: center;
+    vertical-align: middle;
+  }
+
+
+  /* ---------- MODAL ----------  */
+
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 120%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+  
+    /* Garante que overflow do conteúdo não estoure a tela */
+    overflow-y: auto;
+    padding: 20px;
+  }
+  
+  .modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 900px;
+    max-width: 90%;
+    position: relative;
+  
+    /* Suavidade no centro */
+    box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    text-align: center;
+    max-height: 90vh; /* Evita que o conteúdo do modal passe da tela */
+    overflow-y: auto;
+    left: 20rem;
+    top: 8rem;
+  }
+  
+  .modal .modal-content form {
+    position: relative;
+    bottom: -8px;
+    border: solid 3px var(--blue);
+    border-top: none;
+    border-left: solid 3px var(--blue);
+    box-shadow: 10px 4px 5px rgba(0, 0, 0, 0.23); /*sombra 63*/
+    padding-bottom: 30px;
+    width: 99%;
+  }
+  
+  .modal-content h2 {
+    margin-top: 0;
+  }
+  
+  .modal-buttons {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  .modal-buttons button {
+    margin-left: 10px;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  
+  .close-button {
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
+  
+  
+  .form-editar-livro {
+    text-align: center;
+  }
+  
+  .modal-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+  }
+  
+  .modal-header label {
+    position: relative;
+    left: 17px;
+  
+  }
+  
+  .modal-header input{
+    width: 100px;
+    position: relative;
+    right: 15px;
+    margin: 40px;
+  }
+  
+  
+  
+  .modal-body {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-right: 10px
+  }
+  
+  .modal-body label {
+    position: relative;
+    left: 7px;
+    white-space: nowrap;
+    margin-right: 42px;
+  }
+  
+  .modal-body input {
+    width: 100px;
+    position: relative;
+    right: 14px;
+  }
+  
+  #edit {
+    position: relative;
+    left: 30px;
+  }
+  
+  .modal-body > #editTipoCapa {
+    position: relative;
+    top: 1px;
+    right: 40px;
+    width: 300px;
+  }
+  
+  .modal-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .modal-buttons button {
+    margin-left: 30px;
+  
+    background-color: var(--blue);
+    color: #f5f5f5;
+    font-weight: 900;
+    font-size: 1.4em;
+  
+      width: 19%;
+      height: 36px;
+      border-radius: 40px;
+      padding: 5px 20px;
+      font-size: 17px;
+      outline: none;
+      border: 1px solid var(--black2);
+      margin-bottom: 20px;
+      margin: 8px;
+  }
+  
+  .modal-buttons button:hover {
+    background-color: #41080880;
+  }
+  
+  /* ---------- MODAL ----------  */
+
+
+  
+  
+.status-ativo {
+  color: white;
+  font-weight: 900;
+  background-color: green;
+}
+
+.status-inativo {
+  color: white;
+  font-weight: 900;
+  background-color: red;
+}
+
+
+.data-horario {
+  color: black;
+  background-color: rgb(52, 181, 255);
+  font-weight: 900;
+}
+
+
+.toast {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  padding: 14px 22px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  color: #fff;
+  font-weight: bold;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  z-index: 9999;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.toast.hidden {
+  display: none;
+}
+
+/* Cores específicas */
+.toast-sucesso {
+  background-color: #28a745; /* Verde */
+}
+
+.toast-erro {
+  background-color: #dc3545; /* Vermelho */
+}
+
+
+div > #btnConfirmarSim {
+  width: 15%;
+  background-color: var(--blue);
+  color: #f5f5f5;
+  font-weight: 900;
+  font-size: 1em;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+div > #btnConfirmarNao {
+  width: 15%;
+  background-color: var(--blue);
+  color: #f5f5f5;
+  font-weight: 900;
+  font-size: 1em;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+div > #btnConfirmarSim:hover {
+  background-color: #410808d6;
+}
+
+div > #btnConfirmarNao:hover {
+  background-color: #410808d6;
+}
+
+
+
+.modal-content-remover {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  width: 900px;
+  max-width: 90%;
+  position: relative;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  max-height: 90vh;
+  overflow-y: auto;
+  left: 36rem;
+  top: 25rem;
+}
+
+
+
+
